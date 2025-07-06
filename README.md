@@ -29,18 +29,17 @@ This smart web app uses **YOLO object detection**, **NLP filtering**, and **LLM-
 
 ## 📁 Project Structure
 
-ai-recipe-suggester/
-├── app.py # Main Flask app
-├── yolo_detect.py # Image detection (YOLOv8)
-├── NLP_code.py # Preprocessing and food filtering
-├── llm_module.py # Gemini-based recipe generation
-├── templates/
-│ └── index.html # Frontend form
-├── uploads/ # Uploaded images folder
-├── .gitignore
-├── requirements.txt
-├── CONTRIBUTING.md
-└── README.md # You're here!
+AI-Recipe-Generator-Image/
+├── app.py                # Main Flask application integrating all modules
+├── NLP_Code.py           # Handles NLP-based filtering (non-food item removal)
+├── YOLLO.py              # YOLOv8-based object detection (ingredients from images)
+├── llm.py                # Gemini LLM-powered recipe generation
+├── LICENSE               # Project license (MIT or as specified)
+├── secrets.toml          # API keys / config file (should be in .gitignore)
+├── fridge 1.jpg          # Sample input image (fridge photo)
+├── fridge 2.jpg
+├── fridge 3.JPG
+└── README.md             # Project overview, tech stack, usage instructions
 
 
 
