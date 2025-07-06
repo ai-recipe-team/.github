@@ -42,8 +42,7 @@ ai-recipe-suggester/
 ├── CONTRIBUTING.md
 └── README.md # You're here!
 
-yaml
-Copy code
+
 
 ---
 
