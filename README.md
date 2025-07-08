@@ -54,44 +54,55 @@ recipe_oracle/
 
 | Name               | Role                          |
 |--------------------|-------------------------------|
-| Gourika Khandelwal | Frontend Design & Integration |
+| Gourika Khandelwal | Frontend Design               |
 | Sachita Singla     | YOLOv8 Detection Module       |
 | Lipi Goel          | LLM-based Recipe Generator    |
-| Minakshi Kaushik   | NLP Filtering & App Logic     |
+| Minakshi Kaushik   | NLP & Integration             |
 
 > 🤝 A collaborative team project built with shared ownership and equal contribution.
 
 ---
 
 ## 🛠️ Getting Started
-
 ```bash
-# Clone the repo
-git clone https://github.com/YOUR-USERNAME/ai-recipe-suggester.git
-cd ai-recipe-suggester
+# 🍽️ Clone the repository
+git clone https://github.com/ai-recipe-team/recipe-oracle.git
+cd recipe-oracle
 
-# (Optional) Create and activate a virtual environment
+# 🧪 (Optional but recommended) Create and activate a virtual environment
 python -m venv venv
-source venv/bin/activate  # For Windows: venv\Scripts\activate
+# Activate the environment
+# For Windows:
+venv\Scripts\activate
+# For Mac/Linux:
+source venv/bin/activate
 
-# Install dependencies
+# 📦 Install required dependencies
 pip install -r requirements.txt
 
-# Run the app
-python app.py
+# ▶️ Run the Streamlit app
+streamlit run script.py
+```
+
 🔐 API Key Setup (for Gemini API)
-To use Gemini for recipe generation, create a .env file in the project root and add your API key like this:
-
-ini
-Copy code
+```ini
+To use Gemini for recipe generation, create a secrets.env file in the project root and add:
 GEMINI_API_KEY=your_gemini_api_key_here
-Then, in your Python code, access the key using:
+```
 
-python
-Copy code
+In Python code (already handled in llm_module.py), the key is loaded using:
+
+```python
+from dotenv import load_dotenv
 import os
+
+load_dotenv("secrets.env")
 api_key = os.getenv("GEMINI_API_KEY")
-✅ Make sure your .env file is listed in .gitignore to keep it private.
-🔑 You can get your Gemini API key from: https://makersuite.google.com/app/apikey
+```
+✅ Make sure secrets.env is listed in your .gitignore so it doesn’t get pushed to GitHub.
+
+🔑 Get Your Gemini API Key From:
+https://makersuite.google.com/app/apikey
+
 
 🧑‍🍳 Built with curiosity, teamwork, and a love for food & AI!
