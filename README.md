@@ -22,25 +22,30 @@ This smart web app uses **YOLO object detection**, **NLP filtering**, and **LLM-
 | Ingredient Detection | YOLOv8 (Ultralytics)               |
 | Filtering            | Python NLP + WordNet               |
 | Recipe Generation    | Gemini LLM (Google)                |
-| Frontend             | HTML + Flask                       |
-| Deployment           | (Optional: Render / Google Colab)  |
+| Frontend             | Streamlit                          |
+| Deployment           | Hugging Face                       |
 
 ---
 
 ## 📁 Project Structure
 
-AI-Recipe-Generator-Image/
-├── app.py                # Main Flask application integrating all modules
-├── NLP_Code.py           # Handles NLP-based filtering (non-food item removal)
-├── YOLLO.py              # YOLOv8-based object detection (ingredients from images)
-├── llm.py                # Gemini LLM-powered recipe generation
-├── LICENSE               # Project license (MIT or as specified)
-├── secrets.toml          # API keys / config file (should be in .gitignore)
-├── fridge 1.jpg          # Sample input image (fridge photo)
-├── fridge 2.jpg
-├── fridge 3.JPG
-└── README.md             # Project overview, tech stack, usage instructions
-
+recipe_oracle/
+│
+├── script.py # Main Streamlit app (UI + logic)
+├── llm_module.py # Handles interaction with Gemini API (dish suggestions, recipe steps)
+├── yolo_detect.py # Detects ingredients from uploaded image using YOLO
+├── NLP_code.py # Cleans & filters detected objects (removes non-ingredients)
+│
+├── secrets.env # 🔒 Gemini API Key (Keep it secret, don't upload)
+├── requirements.txt # Python dependencies
+├── README.md # Project documentation
+├── team.txt # Contributors list
+│
+├── background.png # UI background image
+├── .gitignore # Files to ignore when pushing to GitHub
+│
+├── uploads/ # Folder to temporarily store uploaded image
+└── pycache/ # Python cache (ignored)
 
 
 ---
